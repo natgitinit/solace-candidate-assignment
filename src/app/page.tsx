@@ -67,7 +67,7 @@ export default function Home() {
 
 	return (
 		<main style={{ margin: "24px" }}>
-			<h1 className="text-3xl font-semibold text-gray-800 dark:text-white lg:text-4xl">
+			<h1 className="text-3xl font-semibold text-gray-800 lg:text-4xl">
 				Solace Advocates
 			</h1>
 			<br />
