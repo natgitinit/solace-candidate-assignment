@@ -38,11 +38,7 @@ export default function Home() {
 	const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const term = e.target.value;
 		setSearchTerm(term);
-		const normalizedTerm = normalizeString(term);
-
-		<p>
-			Searching for: <span id="search-term"> {searchTerm} </span>
-		</p>;
+		const normalizedTerm = normalizeString(term.trim());
 
 		console.log("filtering advocates...");
 		const filteredAdvocates = advocates.filter((advocate) => {
@@ -62,6 +58,7 @@ export default function Home() {
 	};
 
 	const onClick = () => {
+		setSearchTerm("");
 		setFilteredAdvocates(advocates);
 	};
 
@@ -73,9 +70,6 @@ export default function Home() {
 			<br />
 			<br />
 			<div>
-				<p>
-					<span id="search-term">{searchTerm}</span>
-				</p>
 				<div className="relative w-full max-w-xs">
 					<span className="absolute inset-y-0 left-0 flex items-center pl-3">
 						<svg
