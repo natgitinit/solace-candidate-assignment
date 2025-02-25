@@ -42,7 +42,10 @@ export default function Home() {
 
 		console.log("filtering advocates...");
 		const filteredAdvocates = advocates.filter((advocate) => {
+			const fullName = `${advocate.firstName.toLowerCase()} ${advocate.lastName.toLowerCase()}`;
+
 			return (
+				fullName.includes(normalizedTerm) ||
 				advocate.firstName.toLowerCase().includes(normalizedTerm) ||
 				advocate.lastName.toLowerCase().includes(normalizedTerm) ||
 				advocate.city.toLowerCase().includes(normalizedTerm) ||
